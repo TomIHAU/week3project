@@ -17,7 +17,7 @@ var numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 }*/
 
 function generatePassword(){
-
+  var password;
   var passLength = prompt("How long would you like your password?", "enter length here");
 
    //checks requested password parameters are good.
@@ -62,10 +62,11 @@ function generatePassword(){
   }
   //loop to make password
   for(let i = 0; i < passLength; i++){
-    var rng = Math.floor(Math.random()*options.length)
-    
+    var rng = Math.floor(Math.random()*options.length);
+    var rngArray = Math.floor(Math.random()*optionsLength[rng]);
+    password.concat(options[rng[rngArray]]);
   }
-
+return password;
   
 }
 
