@@ -20,7 +20,7 @@ function generatePassword(){
   var password ="";
   var passLength = prompt("How long would you like your password?", "enter length here");
 
-   //checks requested password parameters are good.
+   //checks if input is valid.
   if (isNaN(passLength)){
     alert("incorrect input, you must put in a number between 8 and 128.");
     var playAgain = confirm("Would you like to try again?");
@@ -39,6 +39,7 @@ function generatePassword(){
       return;
     }
   }
+
   //asks user for password character parameters.
   var wantsSpecial = confirm("Do you want to use special characters in you password?");
   if(wantsSpecial){
@@ -60,7 +61,9 @@ function generatePassword(){
     options.push(numericCharacters);
     optionsLength.push(numericCharacters.length);
   }
-  if(!wantsSpecial &&
+
+  //loops user back to start if no characters selected
+    if(!wantsSpecial &&
     !wantsLowerC &&
     !wantsUpperC &&
     !wantsNumbers){
@@ -79,7 +82,7 @@ function generatePassword(){
     password += temp;
   }
   alert(password);
-return password;
+  return password;
 }
 
 // Write password to the #password input
@@ -89,7 +92,7 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = "password";
+  passwordText.value = password;
 
 }
 
