@@ -1,6 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-var options = [];
+var options = [numericCharacters, upperCasedCharacters];
+var optionsLength = [];
 var specialCharacters = ['@', '%', '+', '\\', '/', "'", '!', '#', '$', '^', '?', ':', ',', ')', '(',  '}', '{', ']', '[', '~', '-', '_', '.',];
 var lowerCasedCharacters = [ 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',];
 var upperCasedCharacters = [ 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',];
@@ -42,18 +43,22 @@ function generatePassword(){
   var wantsSpecial = confirm("Do you want to use special characters in you password?");
   if(wantsSpecial){
     options.push(specialCharacters);
+    optionsLength.push(specialCharacters.length);
   }
   var wantsLowerC = confirm("Do you want to use lowercase letters in you password?");
   if(wantsLowerC){
     options.push(lowerCasedCharacters);
+    optionsLength.push(lowerCasedCharacters.length);
   }
   var wantsUpperC = confirm("Do you want to use uppercase letters in you password?");
   if(wantsUpperC){
     options.push(upperCasedCharacters);
+    optionsLength.push(upperCasedCharacters.length);
   }
   var wantsNumbers = confirm("Do you want to use numbers in you password?");
   if(wantsNumbers){
     options.push(numericCharacters);
+    optionsLength.push(numericCharacters.length);
   }
   //loop to make password
   for(let i = 0; i < passLength; i++){
@@ -63,7 +68,6 @@ function generatePassword(){
 
   
 }
-
 
 
 
