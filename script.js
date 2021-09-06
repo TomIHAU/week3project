@@ -6,16 +6,6 @@ var lowerCasedCharacters = [ 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', '
 var upperCasedCharacters = [ 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 var numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
-//want to return it our of function its in
-// function playAgain() {
-//   alert("incorrect input, you must put in a number between 8 and 128.");
-//     var again = confirm("Would you like to try again?");
-//     if (again){
-//       generatePassword();
-//     } 
-//     return ;
-// }
-
 function generatePassword(){
   var options = [];
   var password = "";
@@ -72,7 +62,7 @@ function generatePassword(){
       return;
     
     }
-    
+
   //loop to make password
   for(let i = 0; i < passLength; i++){
     var rng = Math.floor(Math.random()*options.length);
@@ -85,7 +75,6 @@ function generatePassword(){
   return password;
 }
 
-// Write password to the #password input
 function writePassword() {
   
   var password = generatePassword();
@@ -93,8 +82,7 @@ function writePassword() {
     debugger
   }
   passwordElement.value = password;
-  
-}
+  }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
